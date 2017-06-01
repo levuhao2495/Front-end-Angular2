@@ -1,0 +1,198 @@
+<div class="container">
+		
+		<form (ngSubmit)="addDevice()" #addform="ngForm">
+      	
+		<div class="form-group">
+		
+			<label for="ip">IP</label>
+<!--
+	event bindings liên kết một chiều từ template tới component
+biểu diễn bằng dấu ngoặc tròn ().
+	property bindings liên kết một chiều từ component tới template
+biểu diễn bằng dấu ngoặc vuông [].
+	liên kết 2 chiều tương đương với event bindings cộng property bindings 
+==>> có cú pháp [(ngModel)].
+-->
+			<input type="text" [(ngModel)]="modeldevice.ip"
+			
+			name="ip" 
+			class="form-control" id="ip"
+		
+			required #ip="ngModel"> <!-- Sử dụng #name="ngModel" 
+			trong một phần tử input tạo ra một biến template cục bộ (local template variable) 
+			và gán directive ngModel tới nó. 
+			Bạn có thể sử dụng biến này để truy cập tới các thuộc tính
+			 của directive ngModel như valid, pristine, touched, ...-->
+		
+		</div>
+		<div [hidden]="ip.valid || ip.pristine"
+		
+			class="alert alert-danger">
+			
+				*IP is required
+		
+		</div>
+		&nbsp;
+		<div class="form-group">
+		
+			<label for="mac">MAC</label>
+			
+			<input type="text" [(ngModel)]="modeldevice.mac"
+			
+			name="mac"
+			
+			class="form-control" id="mac"
+			
+			required #mac="ngModel">
+		
+		</div>
+		<div [hidden]="mac.valid || mac.pristine"
+		
+			class="alert alert-danger">
+			
+					*Mac is required
+			
+		</div>
+
+		&nbsp;
+	<div class="form-group">
+			
+			<label for="name">Name</label>
+			
+			<input type="text" [(ngModel)]="modeldevice.name"
+			
+			name="name"
+			
+			class="form-control" id="name"
+			
+			required #name="ngModel">
+			
+		</div>
+		<div [hidden]="name.valid || name.pristine"
+		
+			class="alert alert-danger">
+				
+				*Name is required
+		
+		</div>
+
+		&nbsp;
+		<div class="form-group">
+		
+			<label for="type">Type</label>
+			
+			<input type="text" [(ngModel)]="modeldevice.type"
+			
+			name="type"
+			
+			class="form-control" id="type"
+			
+			required #type="ngModel">
+		
+		</div>
+			<div [hidden]="type.valid || type.pristine"
+			
+			class="alert alert-danger">
+			
+				*Type is required
+			
+		</div>
+    	&nbsp;
+		<div class="form-group">
+		
+			<label for="version">Version</label>
+			
+			<input type="text" [(ngModel)]="modeldevice.version"
+			
+			name="version"
+			
+			class="form-control" id="version"
+			
+			required #version="ngModel">
+		
+		</div>
+			<div [hidden]="version.valid || version.pristine"
+			
+			class="alert alert-danger">
+			
+				*Version is required
+			
+		</div>
+    	&nbsp;
+		<div class="form-group">
+		
+			<label for="snmpv">SNMP Version</label>
+			
+			<input type="text" [(ngModel)]="modeldevice.snmpv"
+			
+			name="snmpv"
+			
+			class="form-control" id="snmpv"
+			
+			required #snmpv="ngModel">
+		
+		</div>
+			<div [hidden]="snmpv.valid || snmpv.pristine"
+			
+			class="alert alert-danger">
+			
+				*SNMP Version is required
+			
+		</div>
+    	&nbsp;
+		<div class="form-group">
+		
+			<label for="snmpr">SNMP Read</label>
+			
+			<input type="text" [(ngModel)]="modeldevice.snmpr"
+			
+			name="snmpr"
+			
+			class="form-control" id="snmpr"
+			
+			required #snmpr="ngModel">
+		
+		</div>
+			<div [hidden]="snmpr.valid || snmpr.pristine"
+			
+			class="alert alert-danger">
+			
+				*SNMP Read is required
+			
+		</div>
+    	&nbsp;
+		<div class="form-group">
+		
+			<label for="snmpw">SNMP Write</label>
+			
+			<input type="text" [(ngModel)]="modeldevice.snmpw"
+			
+			name="snmpw"
+			
+			class="form-control" id="snmpw"
+			
+			required #snmpw="ngModel">
+		
+		</div>
+			<div [hidden]="snmpw.valid || snmpw.pristine"
+			
+			class="alert alert-danger">
+			
+				*SNMP Write is required
+			
+		</div>
+
+		<br/>
+    	<!-- class="btn btn-default form-control"-->
+		<button type="submit" class="btn btn-success" [disabled]="!addform.form.valid" >Add</button>
+		<!-- Directive ngForm cung cấp thuộc tính form.valid 
+		  giúp bạn biết tất cả điều khiển trong một form 
+		  là hợp lệ hay không. -->
+		<button type="reset" class="btn btn-warning">Clear</button>
+		<button type="button" class="btn btn-default"><a routerLink="/allDevice">Cancel</a></button>
+	
+		</form>
+		
+		</div>
+   
+

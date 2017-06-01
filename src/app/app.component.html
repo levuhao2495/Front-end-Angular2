@@ -1,3 +1,22 @@
+<div class=header>
 <h1>
-  {{title}}
+        {{title}}
 </h1>
+</div>
+<div class=header>
+    <nav>   
+            <a [routerLink]="['/allDevice']">DEVICE INFORMATION</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a [routerLink]="['/allVlan']">VLAN INFORMATION</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a [routerLink]="['/allPort']">PORT INFORMATION</a>
+
+    </nav>
+</div>
+<hr/>
+        <router-outlet></router-outlet>
+
+
+<br/><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>  <br/> <br/> <br/> <br/>       
+<hr/>
+<div class="footer">Designed by HHT.</div>
