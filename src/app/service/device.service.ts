@@ -9,8 +9,8 @@ export class DeviceService{
 
     constructor(private _http:Http){}
     getAllDevices(){
-        return this._http.get('./apidevice/device')
-        .map((rp: Response) =>rp.json());
+        return this._http.get('/apidevice/device')
+        .map((response: Response) =>response.json());
 
     }
     /*

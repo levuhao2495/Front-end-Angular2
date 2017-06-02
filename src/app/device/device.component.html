@@ -6,9 +6,9 @@
 	</head>
 	<body>
 	<div class="container">
-	<div class="row">
+	<div class="table-responsive">
 
-	<table class="table">
+	<table class="table ">
 			<thead>
 				<th>DEVICE ID</th>
 				<th>IP</th>
@@ -18,15 +18,25 @@
 				<th>VERSION</th>
 				<th>SNMP VERSION</th>
 				<th>SNMP READ</th>
-				<th>SNMP WRITE</th>
-				
+				<th>SNMP WRITE</th>				
 				<th>
 					<a [routerLink]="['/addDevice']">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true" aria-label="Right Align"></span>
 						</a>
-				</th>
-				
+				</th>				
 			</thead>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+				</tr>
+			
 				<tr *ngFor="let item of allDevices ">			
 						<td>{{item.deviceid}}</td>
 						<td>{{item.ip}}</td>

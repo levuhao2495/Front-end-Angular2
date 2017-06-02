@@ -10,7 +10,7 @@ import {EditdeviceComponent} from './device/editdevice/editdevice.component';
 
 
 const appRouters: Routes = [
-    {   path:'', redirectTo:'/home',pathMatch:'full' },
+    {   path:'', redirectTo:'',pathMatch:'full' },
   
     {   path:'allDevice', component : DeviceComponent},
     {   path: 'allVlan', component : VlanComponent },

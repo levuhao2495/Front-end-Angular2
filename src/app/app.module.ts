@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { LocationStrategy,HashLocationStrategy} from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { DeviceComponent } from './device/device.component';
@@ -32,7 +33,10 @@ enableProdMode();
     HttpModule,
     routing,
   ],
-  providers: [DeviceService,],
+  providers: [DeviceService,
+  //To prevent error 404 add this import
+          {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
